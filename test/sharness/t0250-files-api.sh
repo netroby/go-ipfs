@@ -572,16 +572,16 @@ tests_for_files_api() {
 	local EXTRA
 	EXTRA=$1
 
-	test_expect_success "can create some files for testing ($extra)" '
+	test_expect_success "can create some files for testing ($EXTRA)" '
 		create_files
 	'
 	ROOT_HASH=QmcwKfTMCT7AaeiD92hWjnZn9b6eh9NxnhfSzN5x2vnDpt
-        CATS_HASH=Qma88m8ErTGkZHbBWGqy1C7VmEmX8wwNDWNpGyCaNmEgwC
+	CATS_HASH=Qma88m8ErTGkZHbBWGqy1C7VmEmX8wwNDWNpGyCaNmEgwC
 	FILE_HASH=QmQdQt9qooenjeaNhiKHF3hBvmNteB4MQBtgu3jxgf9c7i
 	TRUNC_HASH=QmdaQZbLwK5ykweGdCVovNnvBom7QhikovDUVqTPHQG4L8
 	test_files_api "($EXTRA)"
 
-	test_expect_success "can create some files for testing with raw-leaves ($extra)" '
+	test_expect_success "can create some files for testing with raw-leaves ($EXTRA)" '
 		create_files --raw-leaves
 	'
 
@@ -592,13 +592,13 @@ tests_for_files_api() {
         fi
 
 	ROOT_HASH=QmW3dMSU6VNd1mEdpk9S3ZYRuR1YwwoXjGaZhkyK6ru9YU
-        CATS_HASH=QmPqWDEg7NoWRX8Y4vvYjZtmdg5umbfsTQ9zwNr12JoLmt
+	CATS_HASH=QmPqWDEg7NoWRX8Y4vvYjZtmdg5umbfsTQ9zwNr12JoLmt
 	FILE_HASH=QmRCgHeoKxCqK2Es6M6nPUDVWz19yNQPnsXGsXeuTkSKpN
 	TRUNC_HASH=QmRFJEKWF5A5FyFYZgNhusLw2UziW9zBKYr4huyHjzcB6o
 	test_files_api "($EXTRA, raw-leaves)" --raw-leaves
 
 	ROOT_HASH=QmageRWxC7wWjPv5p36NeAgBAiFdBHaNfxAehBSwzNech2
-        CATS_HASH=zdj7WkEzPLNAr5TYJSQC8CFcBjLvWFfGdx6kaBrJXnBguwWeX
+	CATS_HASH=zdj7WkEzPLNAr5TYJSQC8CFcBjLvWFfGdx6kaBrJXnBguwWeX
 	FILE_HASH=zdj7WYHvf5sBRgSBjYnq64QFr449CCbgupXfBvoYL3aHC1DzJ
 	TRUNC_HASH=zdj7WYLYbka6Ydg8gZUJRLKnFBVehCADhQKBsFbNiMxZSB5Gj
         if [ "$EXTRA" = "offline" ]; then
@@ -623,7 +623,7 @@ tests_for_files_api() {
 		test_cmp hash_expect hash_actual
 	    '
 	    ROOT_HASH=zDMZof1kxEsAwSgCZsGQRVcHCMtHLjkUQoiZUbZ87erpPQJGUeW8
-            CATS_HASH=zDMZof1kuAhr3zBkxq48V7o9HJZCTVyu1Wd9wnZtVcPJLW8xnGft
+	    CATS_HASH=zDMZof1kuAhr3zBkxq48V7o9HJZCTVyu1Wd9wnZtVcPJLW8xnGft
 	    FILE_HASH=zDMZof1kxbB9CvxgRioBzESbGnZUxtSCsZ18H1EUkxDdWt1DYEkK
 	    TRUNC_HASH=zDMZof1kxXqKdVsVo231qVdN3hCTF5a34UuQZpzmm5K7CbRJ4u2S
 	    test_files_api "($EXTRA, blake2b-256 root)"
